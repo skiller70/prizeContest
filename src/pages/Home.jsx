@@ -204,8 +204,8 @@ const Home = ({navigation }) => {
 
     <View style={{marginVertical:10,display:"flex",flexDirection:"row",flexWrap:"wrap"}} >
     <JoinCard navigation={navigation}/>
-    <JoinCard/>
-    <JoinCard/>
+    <JoinCard navigation={navigation}/>
+    <JoinCard navigation={navigation}/>
     </View>
     {/* <JoinCard/> */}
 {/* 
