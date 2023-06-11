@@ -1,11 +1,14 @@
 import {View, Text, Image} from 'react-native';
 import React from 'react';
-import { Button } from 'react-native-paper';
+import {Button} from 'react-native-paper';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Hot from './Hot';
 
+const Tab = createMaterialTopTabNavigator();
 const JoinDetail = ({navigation}) => {
   return (
     <View style={{backgroundColor: 'white', flex: 1}}>
-      <Image
+     <Image
         source={require('../../public/iphone.png')}
         style={{width: '100%', height: 250}}
       />
@@ -38,24 +41,32 @@ const JoinDetail = ({navigation}) => {
 
       {/* -----------------Divider------------------ */}
       {/* DRAW PUBLIC */}
-      <View style={{display: 'flex', flexDirection: 'row',margin:10}}>
-        <Text style={{fontSize:18}}>At least 77990 people draw prizes</Text>
-       
-    
-
-     
+      <View style={{display: 'flex', flexDirection: 'row', margin: 10}}>
+        <Text style={{fontSize: 18}}>At least 77990 people draw prizes</Text>
       </View>
 
-<View style={{display:"flex",justifyContent:"flex-end",marginTop:10,flexDirection:"row",marginHorizontal:10}}>
-<Button style={{width:"35%",borderRadius:8}} mode='contained'>Recharge</Button>
-</View>
+      <View
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          marginTop: 10,
+          flexDirection: 'row',
+          marginHorizontal: 10,
+        }}>
+        <Button style={{width: '35%', borderRadius: 8}} mode="contained">
+          Recharge
+        </Button>
+      </View>
 
-
-      <Text style={{margin:10,fontSize:18}}>
-          surplus 77990 {'\n'}
-          People
-        </Text>
+      <Text style={{margin: 10, fontSize: 18}}>
+        surplus 77990 {'\n'}
+        People
+      </Text>
       {/* DRAW PUBLIC */}
+
+          <Text style={{margin:10,fontSize:18}}>You have not participated in this Contest</Text>
+
+
     </View>
   );
 };

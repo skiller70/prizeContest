@@ -1,8 +1,11 @@
 import {View, Text, Image} from 'react-native';
 import {Button} from 'react-native-paper';
+import {useNavigation} from "@react-navigation/native"
 import React from 'react';
 
-const JoinCard = ({navigation}) => {
+const JoinCard = () => {
+
+  const navigation = useNavigation()
   return (
     <View style={{width: '50%', backgroundColor: 'white', paddingVertical: 10,borderWidth:0.5,borderColor:"#d0d4d9"}}>
       <Image

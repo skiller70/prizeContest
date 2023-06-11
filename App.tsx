@@ -1,11 +1,13 @@
 import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
-import Parent from './src/pages/Parent';
+
+import PageNavigation from './src/pages/PageNavigation';
 
 const App = () => {
   return (
     <View style={{flex:1}}>
-        <Parent/>
+    
+        <PageNavigation/>
     </View>
   );
 };

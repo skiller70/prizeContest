@@ -2,14 +2,20 @@ import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Anouncement from '../components/Anouncement';
 import JoinCard from '../components/JoinCard';
 import WinnerCard from '../components/WinnerCard';
+import JoinDetail from './JoinDetail';
+import Hot from './Hot';
+import AllmostFull from './AllmostFull';
+import NewItem from './NewItem';
 
-const Home = ({navigation }) => {
+const Tab = createMaterialTopTabNavigator();
+
+const Home = ({navigation}) => {
   return (
-    <ScrollView style={{flex: 1}}>
+    <ScrollView >
       <Image
         source={require('../../public/hero.png')}
         style={{width: '100%', height: 200}}
@@ -23,6 +29,7 @@ const Home = ({navigation }) => {
           marginTop: 10,
           backgroundColor: 'white',
           paddingTop: 10,
+          flex: 1,
         }}>
         <View>
           <View>
@@ -107,6 +114,7 @@ const Home = ({navigation }) => {
           justifyContent: 'space-evenly',
           paddingVertical: 10,
           backgroundColor: 'white',
+          flex: 1,
         }}>
         <View>
           <View>
@@ -196,20 +204,36 @@ const Home = ({navigation }) => {
 
       {/* ------------------------------------------------ */}
 
-      <Anouncement />
-    <View >
-    <WinnerCard/>
+      <View style={{flex: 1}}>
+        <Anouncement />
+      </View>
+      <View>
+        <WinnerCard />
+      </View>
 
-    </View>
-
-    <View style={{marginVertical:10,display:"flex",flexDirection:"row",flexWrap:"wrap"}} >
-    <JoinCard navigation={navigation}/>
-    <JoinCard navigation={navigation}/>
-    <JoinCard navigation={navigation}/>
-    </View>
-    {/* <JoinCard/> */}
-{/* 
+      <View
+        style={{
+          marginVertical: 10,
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          flex: 1,
+        }}>
+        <JoinCard navigation={navigation} />
+        <JoinCard navigation={navigation} />
+        <JoinCard navigation={navigation} />
+      </View>
+      {/* <JoinCard/> */}
+      {/* 
       <JoinCard/> */}
+
+      <View style={{height:1000}}>
+        <Tab.Navigator>
+          <Tab.Screen name="Hot" component={Hot} />
+          <Tab.Screen name="New" component={NewItem} />
+          <Tab.Screen name="Allmost Full" component={AllmostFull} />
+        </Tab.Navigator>
+      </View>
     </ScrollView>
   );
 };

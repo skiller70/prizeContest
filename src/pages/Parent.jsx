@@ -15,120 +15,107 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const Parent = () => {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={{
-            tabBarActiveTintColor: '#0366fc',
-            tabBarStyle: {paddingVertical: 10, height: 80},
-            tabBarLabelStyle: {fontSize: 20, paddingVertical: 3},
-            headerShown: false,
+    
+      <Tab.Navigator style={styles.container}
+        screenOptions={{
+          tabBarActiveTintColor: '#0366fc',
+          tabBarStyle: {paddingVertical: 10, height: 80},
+          tabBarLabelStyle: {fontSize: 20, paddingVertical: 3},
+          headerShown: false,
+          tabBarLabelStyle: {
+            display: 'none',
+          },
+        }}>
+        <Tab.Screen
+          name="home"
+          component={Home}
+          options={{
             tabBarLabelStyle: {
-              display: 'none',
+              display: 'flex',
+              fontSize: 18,
             },
-          }}>
-          <Tab.Screen
-            name="home"
-            component={Home}
-            options={{
-              tabBarLabelStyle: {
-                display: 'flex',
-                fontSize: 18,
-              },
-              tabBarIcon: ({focused}) => (
-                <>
-                  <View>
-                    <Feather
-                      name="home"
-                      size={35}
-                      // color={focused ? '#0366fc' : ''}
-                    />
-                  </View>
-                </>
-              ),
-            }}
-          />
+            tabBarIcon: ({focused}) => (
+              <>
+                <View>
+                  <Feather
+                    name="home"
+                    size={35}
+                    // color={focused ? '#0366fc' : ''}
+                  />
+                </View>
+              </>
+            ),
+          }}
+        />
 
-          <Tab.Screen
-            name="class"
-            component={Class}
-            options={{
-              tabBarLabelStyle: {
-                display: 'flex',
-                fontSize: 18,
-              },
-              tabBarIcon: ({focused}) => (
-                <>
-                  <View>
-                    <FontAwesome
-                      name="th-large"
-                      size={35}
-                      // style={{color: focused ? '#0366fc' : ''}}
-                    />
-                  </View>
-                </>
-              ),
-            }}
-          />
+        <Tab.Screen
+          name="class"
+          component={Class}
+          options={{
+            tabBarLabelStyle: {
+              display: 'flex',
+              fontSize: 18,
+            },
+            tabBarIcon: ({focused}) => (
+              <>
+                <View>
+                  <FontAwesome
+                    name="th-large"
+                    size={35}
+                    // style={{color: focused ? '#0366fc' : ''}}
+                  />
+                </View>
+              </>
+            ),
+          }}
+        />
 
-          <Tab.Screen
-            name="latest"
-            component={Crown}
-            options={{
-              tabBarLabelStyle: {
-                display: 'flex',
-                fontSize: 18,
-              },
-              tabBarIcon: ({focused}) => (
-                <>
-                  <View>
-                    <FontAwesome
-                      name="crown"
-                      size={35}
-                      // style={{color: focused ? '#0366fc' : ''}}
-                    />
-                  </View>
-                </>
-              ),
-            }}
-          />
+        <Tab.Screen
+          name="latest"
+          component={Crown}
+          options={{
+            tabBarLabelStyle: {
+              display: 'flex',
+              fontSize: 18,
+            },
+            tabBarIcon: ({focused}) => (
+              <>
+                <View>
+                  <FontAwesome
+                    name="crown"
+                    size={35}
+                    // style={{color: focused ? '#0366fc' : ''}}
+                  />
+                </View>
+              </>
+            ),
+          }}
+        />
 
-          <Tab.Screen
-            name="Profile"
-            component={UserProfile}
-            options={{
-              tabBarLabelStyle: {
-                display: 'flex',
-                fontSize: 18,
-              },
-              tabBarIcon: ({focused}) => (
-                <>
-                  <View>
-                    <Feather
-                      name="user"
-                      size={35}
-                      // style={{color: focused ? '#0366fc' : ''}}
-                    />
-                  </View>
-                </>
-              ),
-            }}
-          />
+        <Tab.Screen
+          name="Profile"
+          component={UserProfile}
+          options={{
+            tabBarLabelStyle: {
+              display: 'flex',
+              fontSize: 18,
+            },
+            tabBarIcon: ({focused}) => (
+              <>
+                <View>
+                  <Feather
+                    name="user"
+                    size={35}
+                    // style={{color: focused ? '#0366fc' : ''}}
+                  />
+                </View>
+              </>
+            ),
+          }}
+        />
 
-          <Tab.Screen
-            name="joindetail"
-            component={JoinDetail}
-            options={{
-              tabBarLabelStyle: {
-                display: 'none',
-              },
-              tabBarButton: () => null,
-              tabBarVisible: false,
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </View>
+      </Tab.Navigator>
+   
   );
 };
 FontAwesome;
